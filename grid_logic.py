@@ -4,9 +4,9 @@ from utils import create_grid, remove_numbers, SUB_GRID_SIZE, GRID_SIZE
 
 class GridLogic:
     LEVELS = {
-        'Easy': GRID_SIZE * GRID_SIZE * 3 // 7,    # 30% trống
-        'Medium': GRID_SIZE * GRID_SIZE * 5 // 9,  # 50% trống
-        'Hard': GRID_SIZE * GRID_SIZE * 7 // 9     # 70% trống
+        'Easy': GRID_SIZE * GRID_SIZE * 3 // 7,    # 30%
+        'Medium': GRID_SIZE * GRID_SIZE * 5 // 9,  # 50%
+        'Hard': GRID_SIZE * GRID_SIZE * 7 // 9     # 70%
     }
 
     def __init__(self, level: str = 'Easy') -> None:

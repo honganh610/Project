@@ -3,6 +3,8 @@ import pytest
 from grid_draw import GridDraw
 
 # Fixture để thiết lập môi trường pygame
+
+
 @pytest.fixture
 def setup_pygame_environment():
     pygame.init()
@@ -21,7 +23,7 @@ def setup_pygame_environment():
 
 # Kiểm tra chức năng vẽ các dòng
 def test_draw_lines(setup_pygame_environment):
-    pygame, screen, game_font, cell_size, num_x_offset, num_y_offset, line_coordinates = setup_pygame_environment
+    pygame, _, game_font, cell_size, num_x_offset, num_y_offset, line_coordinates = setup_pygame_environment
     grid_draw = GridDraw(game_font, cell_size, num_x_offset, num_y_offset, line_coordinates)
 
     surface = pygame.Surface((1200, 900))  # Tạo một surface để vẽ

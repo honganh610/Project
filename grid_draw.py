@@ -1,5 +1,6 @@
 class GridDraw:
-    def __init__(self, game_font, cell_size, num_x_offset, num_y_offset, line_coordinates):
+    def __init__(self, game_font, cell_size, num_x_offset,
+                 num_y_offset, line_coordinates):
         self.game_font = game_font
         self.cell_size = cell_size
         self.num_x_offset = num_x_offset
@@ -13,7 +14,6 @@ class GridDraw:
             else:
                 pg.draw.line(surface, (173, 216, 230), point[0], point[1])
 
-
     def draw_numbers(self, surface, grid, test_grid, occupied_cells) -> None:
         for y in range(len(grid)):
             for x in range(len(grid[y])):
@@ -25,6 +25,8 @@ class GridDraw:
                     else:
                         text_color = (0, 255, 0)
 
-                    text_surface = self.game_font.render(str(grid[y][x]), False, text_color)
+                    text_surface = self.game_font.render(str(grid[y][x]),
+                                                         False, text_color)
                     surface.blit(text_surface,
-                                 (x * self.cell_size + self.num_x_offset, y * self.cell_size + self.num_y_offset))
+                                 (x * self.cell_size + self.num_x_offset,
+                                  y * self.cell_size + self.num_y_offset))

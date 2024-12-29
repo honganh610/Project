@@ -14,10 +14,10 @@ class GridLogic:
             raise ValueError(f'Invalid level: {level}')
         self.level = level
         self.grid = create_grid(SUB_GRID_SIZE)
-        self.__test_grid = deepcopy(self.grid)  # create a copy of the grid before removing numbers
+        self.__test_grid = deepcopy(self.grid)
+        # create a copy of the grid before removing numbers
         remove_numbers(self.grid, self.LEVELS[self.level])
         self.occupied_cell_coordinates = self.pre_occupied_cells()
-
 
     def set_level(self, level: str) -> None:
         if level in self.LEVELS:
@@ -56,7 +56,6 @@ class GridLogic:
 
     def set_cell(self, x: int, y: int, value: int) -> None:
         self.grid[y][x] = value
-
 
     def provide_hint(self) -> bool:
         for y in range(GRID_SIZE):

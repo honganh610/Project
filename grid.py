@@ -1,7 +1,7 @@
 from grid_logic import GridLogic
 from grid_draw import GridDraw
 from selection import SelectNumber
-from utils import create_line_coordinates, GRID_SIZE
+from utils import create_line_coordinates
 
 
 class Grid:
@@ -31,7 +31,8 @@ class Grid:
             if x <= 900 and not self.win:
                 grid_x, grid_y = x // 100, y // 100
                 if not self.logic.is_cell_preoccupied(grid_x, grid_y):
-                    self.logic.set_cell(grid_x, grid_y, self.selection.selected_number)
+                    self.logic.set_cell(grid_x, grid_y,
+                                        self.selection.selected_number)
                     if self.logic.check_grids():
                         self.win = True
             self.selection.button_click(x, y)
